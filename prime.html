@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Prime Numbers</title>
+</head>
+
+<body>
+  <h1> Enter a number</h1>
+<input type="number" id="number">
+<button id="btn"> Submit </button>
+</body>
+<script>
+  const input = document.getElementById('number').value;
+  const btn = document.getElementById('btn');
+  btn.addEventListener('click', () => {
+    const input = document.getElementById('number').value;
+    let prime = true;
+    if (input == 1) {
+      alert('1 is not a prime number');
+    }
+    else if(input > 1) {
+      for(let i = 2; i < input; i++)  {
+        if(input % i == 0) {
+        prime = false;
+          break;
+        }
+      }
+      if (prime) {
+        alert(`${input} is a prime number`)
+      } else {
+        alert(`${input} is not a prime number`)
+      }
+    }
+    else {
+      alert(`${input} is not a prime number`)
+    }
+    
+  })
+</script>
+</html>
